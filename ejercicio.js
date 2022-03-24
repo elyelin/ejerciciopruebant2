@@ -17,7 +17,6 @@ const proceso = {
     ],
     reclamosConcluidos: [],
     // Todas las polizas con reclamo y estado Resolucion en false
-    // Tiempo estimado: 10 minutos
     polizasConReclamo() {
         let cantidadReclamos = proceso.reclamos.length;
         const rta = []
@@ -32,13 +31,12 @@ const proceso = {
         return rta;
     },
     // Pasar reclamos con estadoResolucion true a reclamosConcluidos
-    // Tiempo estimado 10 minutos 
     pasarEstadoResolucionAterminado() {
         let cantidadReclamos = proceso.reclamos.length;
 
         for (let index = 0; index < cantidadReclamos; index++) {
             let poliza = proceso.reclamos[index];
-            
+
             if(poliza.estadoResolucion){
                proceso.reclamosConcluidos.push(poliza)
               }
